@@ -166,11 +166,11 @@ function LoginScreen({ onSignIn }) {
           <div className="login__brand-mark">T</div>
           <div>
             <h1 className="serif">Trans Maldivian Airways</h1>
-            <p>Internal Systems · NL2</p>
+            <p>Internal Systems</p>
           </div>
         </div>
         <h2>KPI Self-Service Portal</h2>
-        <p className="desc">Track your personal KPIs, monthly actuals, and scorecards against the 2026 Balanced Scorecard cycle.</p>
+        <p className="desc">Track your personal KPIs, monthly actuals, and scorecards against the 2025 Balanced Scorecard cycle.</p>
         <button className="login__sso" onClick={onSignIn}>
           {/* Microsoft 4-square logo */}
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
