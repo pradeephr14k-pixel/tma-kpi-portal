@@ -53,7 +53,7 @@
     year: 2025,
     quarter: "FY 2025",
     status: "Closed",
-    nextReview: "May 2026",
+    nextReview: "May 2025",
     monthsCovered: 12,
   };
 
@@ -371,14 +371,14 @@
     {
       id: "n1", unread: true, type: "cycle", severity: "info",
       title: "2025 KPI cycle closed",
-      body: "Your final 2025 achievement of 96.9% is now visible in your Scorecard. Hard copy will be issued during the May 2026 review.",
+      body: "Your final 2025 achievement of 96.9% is now visible in your Scorecard. Hard copy will be issued during the May 2025 review.",
       time: "2 days ago", ts: "2 days ago", icon: "calendar",
       kpiId: null, screen: "scorecard",
     },
     {
       id: "n2", unread: true, type: "deadline", severity: "warning",
       title: "Action required: Self-review for 2025",
-      body: "Submit your 2025 self-review reflections by 15 May 2026. Your line manager will review before the FY26 KPI confirmation meeting.",
+      body: "Submit your 2025 self-review reflections by 15 May 2025. Your line manager will review before the FY26 KPI confirmation meeting.",
       time: "3 days ago", ts: "3 days ago", icon: "edit",
       kpiId: KPIS[0]?.id, screen: "my-kpis",
     },
