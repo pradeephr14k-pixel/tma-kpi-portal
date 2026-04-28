@@ -1,0 +1,79 @@
+<!doctype html>
+<!--
+============================================================================
+  TMA KPI Self-Service Portal — Clickable Prototype (internal code: NL2)
+  ----------------------------------------------------------------------------
+  SCREEN INVENTORY (10 screens)
+    01  Login / Entra ID SSO landing      — LoginScreen         (chrome.jsx)
+    02  Employee Dashboard (Home)         — DashboardScreen     (screens-a.jsx)
+    03  My KPIs (filterable list)         — MyKpisScreen        (screens-a.jsx)
+    04  KPI Detail / Drill-down drawer    — KpiDrawer           (screens-a.jsx)
+    05  My Scorecard (print-ready A4)     — ScorecardScreen     (screens-a.jsx)
+    06  Performance History (trend)       — HistoryScreen       (screens-b.jsx)
+    07  Team View (manager roll-up)       — TeamScreen          (screens-b.jsx)
+    08  KPI Library (all 56 KPIs)         — LibraryScreen       (screens-b.jsx)
+    09  Notifications Centre              — NotificationsScreen (screens-b.jsx)
+    10  Help & FAQs                       — HelpScreen          (screens-b.jsx)
+
+  COMPONENT INVENTORY  (components.jsx)
+    StatCard, AchBadge, BscBadge, Sparkline, Pie, KpiMeter,
+    BarChart, LineChart, Icon, Sidebar, Header, Breadcrumb, Filters,
+    Drawer, Accordion, Table (.tbl), KPI-bar gauge with Gate/Target markers.
+
+  MOCK DATA (data.js) — maps 1:1 to Dataverse schema
+    USER        → Employee / systemuser
+    DEPARTMENTS → bu_department
+    KPIS        → kpi + cascaded kpi_assignment (per-employee)
+    LIBRARY_KPIS→ kpi (department-level master list)
+    TEAM        → Employee (direct-report query)
+    NOTIFICATIONS → notification
+    HISTORY     → cycle + kpi_actual aggregates
+    FAQS        → cms_article
+
+  POWER PAGES TRANSLATION NOTES — see TMA_PowerPages_Notes.md
+    Entra ID web roles:  Employee / Manager / HR Admin
+    Liquid templates:    header.liquid, sidenav.liquid, screen-{id}.liquid
+    List:                My KPIs, KPI Library (Dataverse-bound lists)
+    Form:                Self-review entity form w/ validation + workflow
+    Web Templates:       Dashboard (Power Fx + Web API), Scorecard (PDF export)
+============================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=1280, initial-scale=1"/>
+  <title>TMA KPI Self-Service Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Runtime utilities (toast, CSV export, download helpers) -->
+  <script src="utils.js?v=4"></script>
+
+  <!-- Real data, auto-generated from "Finalized KPI Master - 2025.xlsx" -->
+  <script src="dataset.js?v=4"></script>
+
+  <!-- Adapter: shapes window.TMA_DATA into legacy globals (USER, KPIS, …) -->
+  <script src="data.js?v=4"></script>
+
+  <!-- React + Babel (pinned with integrity hashes) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <!-- Shared atoms, chrome, screens, app root -->
+  <script type="text/babel" src="components.jsx?v=4"></script>
+  <script type="text/babel" src="chrome.jsx?v=4"></script>
+  <script type="text/babel" src="screens-a.jsx?v=4"></script>
+  <script type="text/babel" src="screens-b.jsx?v=4"></script>
+  <script type="text/babel" src="screens-c.jsx?v=4"></script>
+  <script type="text/babel" src="app.jsx?v=4"></script>
+
+  <!-- Design tweaks panel — floating overlay (density / palette / typography) -->
+  <script src="tweaks.js?v=1"></script>
+</body>
+</html>
