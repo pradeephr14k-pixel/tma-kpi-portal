@@ -32,7 +32,7 @@ function DashboardScreen({ goto, openKpi }) {
         <div style={{ position: "relative", zIndex: 1 }}>
           <span className="welcome__pill"><Icon name="calendar" size={11} color="var(--gold2)" /> {CYCLE.year} KPI Cycle · {CYCLE.quarter} {CYCLE.status}</span>
           <h2 style={{ marginTop: 8 }}>Welcome back, {USER.name.split(" ")[0]}.</h2>
-          <p>Here's your performance snapshot as of May 2026. Next review scheduled for {CYCLE.nextReview}.</p>
+          <p>Here's your performance snapshot as of May 2025. Next review scheduled for {CYCLE.nextReview}.</p>
         </div>
         <div className="welcome__actions">
           <button className="btn btn--gold" onClick={() => goto("scorecard")}><Icon name="scorecard" size={14}/> View Scorecard</button>
@@ -180,7 +180,7 @@ function MyKpisScreen({ openKpi }) {
       <div className="ph">
         <div>
           <h1 className="serif">My KPIs</h1>
-          <div className="ph__sub">{KPIS.length} KPIs assigned · {CYCLE.year} cycle · reporting as of May 2026</div>
+          <div className="ph__sub">{KPIS.length} KPIs assigned · {CYCLE.year} cycle · reporting as of May 2025</div>
         </div>
         <div className="ph__actions">
           <button className="btn btn--ghost" onClick={() => exportCsv(
@@ -452,7 +452,7 @@ function ScorecardScreen() {
             <div>
               <div style={{ fontSize: 11, color: "var(--text3)", textTransform: "uppercase", letterSpacing: ".08em", fontWeight: 700 }}>Trans Maldivian Airways</div>
               <h1 className="serif">Employee KPI Scorecard · {CYCLE.year} Cycle</h1>
-              <div style={{ fontSize: 11.5, color: "var(--text2)", marginTop: 2 }}>Balanced Scorecard · Gate & Target tiers · Report date May 2026</div>
+              <div style={{ fontSize: 11.5, color: "var(--text2)", marginTop: 2 }}>Balanced Scorecard · Gate & Target tiers · Report date May 2025</div>
             </div>
           </div>
           <div style={{ textAlign: "right" }}>
